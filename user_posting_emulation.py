@@ -2,7 +2,7 @@ import datetime
 import json
 import requests
 import random
-import sqlalchemy
+import sqlalchemy 
 from time import sleep
 import yaml
 
@@ -23,7 +23,6 @@ class AWSDBConnector:
         Using the database credentials, creates a database engine to connect to the database
         """
         self.creds = self.read_db_creds()
-        print(self.creds)
         engine = sqlalchemy.create_engine(f"mysql+pymysql://{self.creds['USER']}:{self.creds['PASSWORD']}@{self.creds['HOST']}:{self.creds['PORT']}/{self.creds['DATABASE']}?charset=utf8mb4")
         return engine
 
@@ -56,8 +55,7 @@ def run_infinite_post_data_loop():
                 invoke_url = f"https://g7wixjqbxa.execute-api.us-east-1.amazonaws.com/0ecf5ea19ac5-test/topics/{topic}"
                 for row in selected_row:
                     result = dict(row._mapping)
-                    print(result)
-                    payload = json.dumps({"records": [{ "value": result}]}, default=datetime_converter)
+                    payload = json.dumps({"records": [{ "value": result}]},default=datetime_converter)
                     print(payload)
                     response = requests.request("POST", invoke_url, headers=headers, data=payload)
                     if response.status_code == 200:
@@ -70,6 +68,6 @@ def run_infinite_post_data_loop():
         i += 1
 
 
-new_connector = AWSDBConnector()
 if __name__ == "__main__":
+    new_connector = AWSDBConnector()
     run_infinite_post_data_loop()
