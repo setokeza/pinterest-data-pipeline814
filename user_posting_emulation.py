@@ -40,8 +40,7 @@ def run_infinite_post_data_loop():
     """
     Creates a connection to the database to emulate row data that is generated randomly into AWS S3
     """
-    i=1
-    while i == 1:
+    while True:
         sleep(random.randrange(0, 2))
         random_row = random.randint(0, 11000)
         engine = new_connector.create_db_connector()
@@ -63,9 +62,6 @@ def run_infinite_post_data_loop():
                     else:
                         print(f'Failed to send data to Kafka topic {topic}')
                         print(f'Response: {response.status_code}, {response.text}')
-
-            
-        i += 1
 
 
 if __name__ == "__main__":
