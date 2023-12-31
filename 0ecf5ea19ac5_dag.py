@@ -29,7 +29,7 @@ with DAG('0ecf5ea19ac5_dag',
     # should be a datetime format
     start_date=datetime(2023, 12, 31),
     # run daily at midnight
-    schedule_interval='* 0 * * * *',
+    schedule_interval='@daily',
     catchup=False,
     default_args=default_args
     ) as dag:
