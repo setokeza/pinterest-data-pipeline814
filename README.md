@@ -1,24 +1,23 @@
-# Pinterest Data Pipeline
-- [Pinterest Data Pipeline](#pinterest-data-pipeline)
-	- [Description](#description)
-		- [Project Goals](#project-goals)
-		- [Technologies Used] (#technologies-used)
-	- [Installation](#installation)
-	- [File Structure](#file-structure)
-	- [Usage](#usage)
-		- [For batch processing](#for-batch-processing)
-		- [For streaming data](#for-streaming-data)
-	- [Project Steps](#project-steps)
-		- [Batch Processing](#batch-processing)
-			- [Configure the EC2 Kafka Client](#configure-the-ec2-kafka-client)
-			- [Connect a MSK cluster to a S3 bucket](#connect-a-msk-cluster-to-a-s3-bucket)
-			- [Configure an API in API Gateway](#configure-an-api-in-api-gateway)
-			- [Databricks](#databricks)
-			- [Spark on Databricks](#spark-on-databricks)
-			- [AWS MWAA](#aws-mwaa)
-		- [Stream Processing](#stream-processing)
-			- [AWS Kinesis](#aws-kinesis)
-	- [License](#license)
+- [Description](#description)
+	- [Project Goals](#project-goals)
+	- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [File structure](#file-structure)
+- [Detailed Usage](#detailed-usage)
+	- [For batch processing](#for-batch-processing)
+	- [For streaming data](#for-streaming-data)
+- [Project Steps](#project-steps)
+	- [Batch Processing](#batch-processing)
+		- [Configure the EC2 Kafka Client](#configure-the-ec2-kafka-client)
+		- [Connect a MSK cluster to a S3 bucket](#connect-a-msk-cluster-to-a-s3-bucket)
+		- [Configure an API in API Gateway](#configure-an-api-in-api-gateway)
+		- [Databricks](#databricks)
+		- [Spark on Databricks](#spark-on-databricks)
+		- [AWS MWAA](#aws-mwaa)
+	- [Stream Processing](#stream-processing)
+		- [AWS Kinesis](#aws-kinesis)
+- [License](#license)
+
 
 
 ## Description
@@ -73,10 +72,10 @@ The tools used for this project are listed below:
 10. **AWS Kinesis:**
     - *Description:* Managed service for processing and analyzing streaming data.
     - *Documentation:* [AWS Kinesis Documentation](https://aws.amazon.com/kinesis/)
+  
+  
+![Alt text](project_architecture.jpeg)
 
-<br>
-![project_architecture.jpeg](project-architecture.jpeg)
-<br>
 
 ## Installation
 
